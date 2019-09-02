@@ -3,7 +3,8 @@
 //ejs = require('ejs'),
 //MONGOOSE SETUP
 mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/messages",
+const dotenv = require('dotenv');
+mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
 {useNewUrlParser : true});
 
 const db = mongoose.connection;
@@ -13,6 +14,7 @@ db.once("open",() => {
 });
 mongoose.Promise = global.Promise
 mongoose.set('useCreateIndex', true);
+
 //EXPRESSS
 const express = require('express'),
 app = express();
