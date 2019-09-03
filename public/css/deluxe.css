@@ -462,3 +462,8 @@ footer > p {
 .thanks > h2 {
     color:#356AF2;
 }
+
+.card {
+    display:flex;
+    flex-direction: column;
+}
