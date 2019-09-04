@@ -172,27 +172,28 @@ form > p {
 }
 #contact-name{
     border-radius: .5em;
-    height:3em;
+    height:2em;
     width:100%
     
 }
 #contact-email{
     border-radius: .5em;
-    height:3em;
+    height:2em;
     width:100%
 }
 #contact-message{
 
     height:5em;
     border-radius: .5em;
-    height: 5em;
+    height: 2.5em;
     width:100%
 
 }
 
 #contact-number {
     width:100%;
-    height: 3em;
+    height: 2em;
+    border-radius:.5em;
 }
 
 .contact-button {
@@ -200,7 +201,7 @@ form > p {
     background-color:#356AF2;
     color:#fff;
     width:100%;
-    height:3em;
+    height:2em;
     font-size:1em;
 }
 
@@ -415,7 +416,7 @@ footer > p {
 
 
 .last-p {
-    margin-top:-1em;
+    margin-top:1em;
 }
 
 .footer-services{
@@ -466,4 +467,9 @@ footer > p {
 .card {
     display:flex;
     flex-direction: column;
+}
+
+.service-projects {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
