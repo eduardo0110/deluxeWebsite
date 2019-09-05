@@ -112,8 +112,9 @@ header {
 
   .heading-info  {
     margin-top:0;
-    width:15em;
+    width:13em;
     height:auto;
+    margin-left:auto;
   }
   
 
