@@ -16,9 +16,11 @@ mongoose.Promise = global.Promise
 mongoose.set('useCreateIndex', true);
 
 //EXPRESSS
+var sslRedirect = require('heroku-ssl-redirect');
 const express = require('express'),
 app = express();
 //MIDDLEWARE ON TOP OF EXPRESS
+app.use(sslRedirect());
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
