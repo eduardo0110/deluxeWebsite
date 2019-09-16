@@ -118,5 +118,40 @@
         </div>
       </footer>
         <script src="" async defer></script>
+
+        <script type="text/javascript">
+          (function () {
+            var button = document.getElementById('toggle-menu');
+            button.addEventListener('click', function(event) {         
+              event.preventDefault();
+             
+              var menu = document.getElementById('main-menu');
+              menu.classList.toggle('is-open'); 
+          
+              var expandedMenu = document.getElementById('expanded-menu');
+              
+              expandedMenu.style.display = 'block';
+              
+          
+                                
+           
+          })})();
+          
+          (function() {
+          var buttonClose = document.getElementById('close-menu');
+          buttonClose.addEventListener('click', function(event) {
+            event.preventDefault();
+            var expandedMenu = document.getElementById('expanded-menu');
+            expandedMenu.style.display='none';
+          
+            
+          })})
+          ();
+          var expandedMenu =  document.getElementById('expanded-menu');
+          expandedMenu.style.display='block';
+          
+          
+          
+          </script>
     </body>
 </html>
