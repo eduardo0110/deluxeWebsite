@@ -606,15 +606,25 @@ display:inline-block;
   }
 
   .areas {
-    display:grid;
-    grid-template-columns:  repeat(auto-fill, minmax(9em , 1fr));
+    display:block;
     background-color:#Fff;
+    text-align:center;
+    color:#9CA9A9;
+   
+  }
+  .area-1{
+
+    
+    display:inline-block;
+    margin-top:-1.2em;
   }
 
   .areas-h2 {
-    padding-top:.5em;
+    padding-top:1em;
     color:gray;
-    padding-left:1em;
+    display:block;
+    font-size:2em;
+    
   }
 
   @media (min-width:896px) {
@@ -644,9 +654,4 @@ display:inline-block;
     padding-top:1em;
   } 
 
- @media (min-width:896px) {
-  #areas-contact {
-    padding-left:9em;
-    color:#626262;
-  }
- }
+  
