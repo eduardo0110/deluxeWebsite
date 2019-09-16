@@ -43,13 +43,13 @@
 .main-heading {
    text-align: center;
    font-weight: 100;
-   font-size:1.5rem;
+   font-size:1rem;
    letter-spacing: .2em;
 }
 
 @media (min-width:896px) {
   .main-heading {
-    font-size:1em;
+    
     text-align:left;
     padding-left:1.5em;
     padding-top:2em;
