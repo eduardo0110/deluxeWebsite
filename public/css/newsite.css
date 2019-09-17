@@ -548,7 +548,7 @@ padding-bottom:5em;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(2,auto);
-    padding-left:4em;
+    padding-left:0;
   }
 }
 
@@ -571,6 +571,12 @@ display:inline-block;
     padding-left:4em;
   }
 
+  @media (min-width:896px){
+    .first-row{
+      padding-left:1.5em;
+    }
+  }
+
   .second-row{
     padding-left:4em;
     padding-top:3em;
@@ -579,6 +585,7 @@ display:inline-block;
   @media (min-width:896px) {
     .second-row{
       padding-top:0;
+      padding-left:1.5em;
     }
   }
 
