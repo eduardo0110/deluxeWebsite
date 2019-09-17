@@ -20,10 +20,7 @@
   background-color:#222222;
   }
 
-  body * + * {
-   margin-top:1
-  }
-
+  
   header {
      color:#9CA9A9;
      background-color:#222222;
@@ -269,9 +266,10 @@ text-align:center;
 color:#ffffff;
 background-color:#0544A4;
 letter-spacing: .2em;
-font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-family: 'Gayathri', Arial, Helvetica;
 padding-bottom:5em;
 };
+
 #button-estimate > a{
   background-color:transparent;
   color:white;
@@ -280,8 +278,23 @@ padding-bottom:5em;
 
 #button-estimate{
   width:80%; background-color:transparent; color:white; border: 1px white solid; letter-spacing:.2em; cursor:pointer;
+  font-family: 'Gayathri', Arial, Helvetica;
+  
+   
+  
+  
   
 }
+.specially-a {
+  padding: 1em 2em;
+}
+
+
+#margin{
+ margin-bottom:2.5em;
+}
+
+
 @media (min-width:896px) {
   #button-estimate{
     font-size: .75em;
@@ -612,13 +625,24 @@ display:inline-block;
     color:#9CA9A9;
    
   }
+  @media (min-width:896px) {
+    .areas {
+      display:flex;
+      flex-direction:row;
+    }
+  }
   .area-1{
 
     
     display:inline-block;
     margin-top:-1.2em;
   }
-
+@media (min-width:896px){
+  .area-1{
+    margin-top:1em;
+    padding-left:3em;
+  }
+}
   .areas-h2 {
     padding-top:1em;
     color:gray;
@@ -628,12 +652,12 @@ display:inline-block;
   }
 
   @media (min-width:896px) {
-    .areas {
-      text-align:center;
-     
-      
+    .areas-h2 {
+      padding-left:1em;
     }
   }
+
+ 
 
   .services-h2{
     padding-top:3em;
@@ -654,4 +678,6 @@ display:inline-block;
     padding-top:1em;
   } 
 
-  
+  .real-button{
+    color:#fff;
+  }
