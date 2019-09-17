@@ -48,6 +48,9 @@ app.get('/services', (req, res) => {
     res.render('services')})
 app.post('/contact-form',quoteController.saveQuote);
 
+app.get('/deluxesiding.com/*' , (req , res) => {
+    res.render('index')})
+
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
