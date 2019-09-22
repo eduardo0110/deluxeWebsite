@@ -693,9 +693,15 @@ display:inline-block;
   /**********PROJECT CSSSSS*/
   #grid {
     position: relative;
-    width: 90%;
+    width: 110%;
     margin: 0 auto;
     padding: 0; /* Clears unordered list default of 40px */
+}
+
+@media (min-width:896px){
+  #grid {
+    width:90%;
+  }
 }
 
 .clear:after {
@@ -856,9 +862,9 @@ margin: .5%;
     margin-top:3em;
   }
 }
-/*
+
 .link-image {
-  position:absolute;
+  position:relative;
   top:2.5em;
   left:.8em;
   color:blue !important;
@@ -866,6 +872,12 @@ margin: .5%;
 
 @media (min-width:896px) {
 
- 
+  .link-image {
+    position:relative;
+    top:4em;
+    left:3em;
+    color:blue !important;
+    letter-spacing:.2em;
+  }
 
 }
