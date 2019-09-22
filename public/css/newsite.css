@@ -693,7 +693,7 @@ display:inline-block;
   /**********PROJECT CSSSSS*/
   #grid {
     position: relative;
-    width: 160%;
+    width: 110%;
     margin: 0 auto;
     padding: 0; /* Clears unordered list default of 40px */
 }
