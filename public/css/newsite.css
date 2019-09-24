@@ -891,3 +891,14 @@ right:3em;
 bottom:3em;
 z-index:100;
 }
+
+.thanks-message{
+  text-align:center;
+  letter-spacing:.2em;
+  word-spacing:1em;
+  font-size:2em;
+  background:#Fff;
+  
+  padding-bottom:2em;
+  padding-top:2em;
+}

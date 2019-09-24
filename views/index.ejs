@@ -93,13 +93,13 @@
      </div>
      <div class="subscribe">
         <h3 class="subscribe-title">Subscribe</h3>
-        <form class="subscribe-form">
+        <form class="subscribe-form" method="get" action="/thanks">
           <div class="subscribe-form-div">
              <p class="input-p">
                 <label for="email"></label>
-                <input type="text" id="subscribe-email" name="email" placeholder="Email Address">
+                <input type="text" id="subscribe-email" name="email" placeholder="Email Address" required>
             </p>
-            <form action="/contact"><button href="/thanks" id="button-estimate"><p class="button-p">-Sign Up-</p></button></form>
+            <form action="/thanks"><button href="/thanks" id="button-estimate"><p class="button-p">-Sign Up-</p></button></form>
           </div>
         </form>
      </div>

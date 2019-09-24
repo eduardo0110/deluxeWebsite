@@ -48,6 +48,10 @@ app.get('/services', (req, res) => {
     res.render('services')})
 app.post('/contact-form',quoteController.saveQuote);
 
+app.get('/thanks' ,(req,res) => {
+    res.render('thanks')
+})
+
 app.get('/deluxesiding.com/*' , (req , res) => {
     res.render('index')})
 
