@@ -38,13 +38,22 @@
     user-select: none;
     -webkit-user-select: none;
   }
+  @media (max-width:480px){
+    .prev,.next{
+      position: absolute;
+      top:35%;
+  }
   
   /* Position the "next button" to the right */
   .next {
     right: 40%;
     border-radius: 3px 0 0 3px;
   }
-  
+  @media (max-width:480px) {
+    .next {
+      right:28%;
+    }
+  }
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover,
   .next:hover {
@@ -52,6 +61,11 @@
   }
   .prev{
       left:40%;
+  }
+  @media (max-width:480px){
+    .prev{
+      left:28%;
+    }
   }
   
   /* Number text (1/3 etc) */
