@@ -44,14 +44,16 @@
   
   
   /* Position the "next button" to the right */
-  @media (max-width:480px) {
-    .next {
-      right:28%;
-    }
-  }
+ 
   .next {
     right: 40%;
     border-radius: 3px 0 0 3px;
+  }
+
+  @media (max-width:490px) {
+    .next {
+      right:28%;
+    }
   }
  
   /* On hover, add a black background color with a little bit see-through */
@@ -64,7 +66,7 @@
   }
   @media (max-width:480px){
     .prev{
-      left:28%;
+      left:30%;
     }
   }
   
