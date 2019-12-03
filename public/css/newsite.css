@@ -24,7 +24,7 @@
   header {
      color:#9CA9A9;
      background-color:#222222;
-     margin-top:-1em;
+     margin-top:1em;
      padding-bottom:.5em;
      padding-top:.5em;
   }
@@ -861,4 +861,8 @@ z-index:100;
   font-size:2em;
   word-spacing: .2em;
 
+}
+
+#down{
+  margin-top:1em;
 }
