@@ -24,7 +24,7 @@
               </h1>
         </div>
       </header>
-      <nav class="menu" id="main-menu " >
+      <nav class="menu" id="main-menu" >
         <button class="menu-toggle" id="toggle-menu">toggle menu</button>
         <div class="menu-dropdown">
           <div class="menu-expand" id="expanded-menu">
@@ -301,6 +301,37 @@
           </div>
         </footer>
         <script>
+
+
+(function () {
+              var button = document.getElementById('toggle-menu');
+              button.addEventListener('click', function(event) {         
+                event.preventDefault();
+               
+                var menu = document.getElementById('main-menu');
+                menu.classList.toggle('is-open'); 
+            
+                var expandedMenu = document.getElementById('expanded-menu');
+                
+                expandedMenu.style.display = 'block';
+                
+            
+                                  
+             
+            })})();
+            
+            (function() {
+            var buttonClose = document.getElementById('close-menu');
+            buttonClose.addEventListener('click', function(event) {
+              event.preventDefault();
+              var expandedMenu = document.getElementById('expanded-menu');
+              expandedMenu.style.display='none';
+            
+              
+            })})
+            ();
+            var expandedMenu =  document.getElementById('expanded-menu');
+            expandedMenu.style.display='block';
           var slideIndex = 1;
           showSlides(slideIndex);
           
@@ -330,35 +361,7 @@
             captionText.innerHTML = dots[slideIndex-1].alt;
           }
 
-          (function () {
-              var button = document.getElementById('toggle-menu');
-              button.addEventListener('click', function(event) {         
-                event.preventDefault();
-               
-                var menu = document.getElementById('main-menu');
-                menu.classList.toggle('is-open'); 
-            
-                var expandedMenu = document.getElementById('expanded-menu');
-                
-                expandedMenu.style.display = 'block';
-                
-            
-                                  
-             
-            })})();
-            
-            (function() {
-            var buttonClose = document.getElementById('close-menu');
-            buttonClose.addEventListener('click', function(event) {
-              event.preventDefault();
-              var expandedMenu = document.getElementById('expanded-menu');
-              expandedMenu.style.display='none';
-            
-              
-            })})
-            ();
-            var expandedMenu =  document.getElementById('expanded-menu');
-            expandedMenu.style.display='block';
+          
             
           </script>
           
