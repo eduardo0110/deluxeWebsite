@@ -39,18 +39,18 @@ const errorController= require('./controllers/errorController');
 
 app.use(express.json());
 app.get('/', (req, res) => {
-    res.render('index')})
+    res.render('index')});
 app.get('/contact', (req, res) => {
     res.render('contact')})
 app.get('/projects', (req, res) => {
-    res.render('projects')})
+    res.render('projects')});
 app.get('/services', (req, res) => {
-    res.render('services')})
+    res.render('services')});
 app.post('/contact-form',quoteController.saveQuote);
 
 app.get('/thanks' ,(req,res) => {
     res.render('thanks')
-})
+});
 app.get('/deluxesiding.com/contact/*' , (req , res) => {
     res.render('contact')})
 app.get('/deluxesiding.com/*' , (req , res) => {
