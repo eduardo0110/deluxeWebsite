@@ -866,3 +866,23 @@ z-index:100;
 #down{
   margin-top:1em;
 }
+
+.contenedor{
+  margin-top:3em;
+  text-align:center;
+  letter-spacing:.1em;
+
+}
+
+.question1 {
+  background:#fff;
+}
+
+.back-buttom{
+  background:#fff;
+  display:inline-block;
+  border-radius: 100px;
+  margin-left:1em;
+   padding:.5em;
+  
+}

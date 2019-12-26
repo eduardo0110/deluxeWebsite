@@ -51,6 +51,9 @@ app.post('/contact-form',quoteController.saveQuote);
 app.get('/thanks' ,(req,res) => {
     res.render('thanks')
 });
+app.get('/blog' , (req , res) => {
+    res.render('blog')
+});
 app.get('/deluxesiding.com/contact/*' , (req , res) => {
     res.render('contact')})
 app.get('/deluxesiding.com/*' , (req , res) => {
