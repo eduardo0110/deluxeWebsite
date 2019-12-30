@@ -30,6 +30,7 @@ app = express();
 //MIDDLEWARE ON TOP OF EXPRESS
 
 app.use(sslRedirect());
+app.use(checkUrl());
 
 app.set("view engine", "ejs");
 
