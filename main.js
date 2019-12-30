@@ -39,62 +39,64 @@ app.use(
 
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
-function checkUrl(req, res, next) {
-    let host = req.headers.host;
-    if (!host.match(/^www\..*/i)) {
-      return res.redirect(301, "https://www." + host + req.url);
-    } else if (req.headers['x-forwarded-proto'] !== 'https') {{
-      return res.redirect('https://' + req.hostname + req.url);
-    }
-    next();
-  }}
-  app.use(checkUrl);
+
+ 
 app.get('/', (req, res) => {
-    
+    var checkUrl = function checkUrl(req, res, next) {
+        let host = req.headers.host;
+        if (!host.match(/^www\..*/i)) {
+          return res.redirect(301, "https://www." + host + req.url);
+        } else if (req.headers['x-forwarded-proto'] !== 'https') {{
+          return res.redirect('https://' + req.hostname + req.url);
+        }
+        next();
+      }}
+    app.use(checkUrl);
     res.render('index')});
 
 app.get('/contact', (req, res) => {
-     app.use(checkUrl);
+     
     res.render('contact')})
 app.get('/projects', (req, res) => {
-    app.use(checkUrl);
+  
     res.render('projects')});
 app.get('/services', (req, res) => {
-    app.use(checkUrl);
+    
     res.render('services')});
 app.post('/contact-form',quoteController.saveQuote);
 
 app.get('/thanks' ,(req,res) => {
-    app.use(checkUrl);
+
     res.render('thanks')
 });
 app.get('/roofingblog' , (req , res) => {
-    app.use(checkUrl);
+   
+    
     res.render('roofingBlog')
 });
 app.get('/gutterblog' , (req , res) => {
-    app.use(checkUrl);
+   
     res.render('gutterBlog')
 });
 app.get('/flooringblog' , (req , res) => {
-    app.use(checkUrl);
+   
     res.render('flooringblog')
 });
 app.get('/carpinteriablog' ,(req , res ) => {
-    app.use(checkUrl);
+   
     res.render('carpinteria')
 });
 
 
 app.get('/blog' , (req , res) => {
-    app.use(checkUrl);
+    
     res.render('blog')
 });
 app.get('/deluxesiding.com/contact/*' , (req , res) => {
-    app.use(checkUrl);
+    
     res.render('contact')})
 app.get('/deluxesiding.com/*' , (req , res) => {
-    app.use(checkUrl);
+    
     res.render('index')})
 
     app.get('*',function(req,res){  
