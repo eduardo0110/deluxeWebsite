@@ -6,7 +6,7 @@
 const https = require('https'),
 mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
-{useNewUrlParser : true});
+{useNewUrlParser : true, useUnifiedTopology :true});
 
 const db = mongoose.connection;
 
@@ -40,8 +40,16 @@ app.use(
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
 
-    
-
+function checkUrl(req, res, next) {
+    let host = req.headers.host;
+    if (!host.match(/^www\..*/i)) {
+      return res.redirect(301, "https://www." + host + req.url);
+    } else if (req.headers['x-forwarded-proto'] !== 'https') {{
+      return res.redirect('https://' + req.hostname + req.url);
+    }
+    next();
+  }}
+app.use(checkUrl);
 app.get('/', (req, res) => {
     res.render('index')});
 app.get(https + '://deluxesiding.com') , (req , res) => {
