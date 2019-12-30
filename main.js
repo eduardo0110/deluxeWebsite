@@ -48,7 +48,7 @@ app.get('/', (req, res,) => {
           return res.redirect(301, "https://www." + host + req.url);
         } else if (req.headers['x-forwarded-proto'] !== 'https') {{
           return res.redirect('https://' + req.hostname + req.url);
-       }}  res.render('index')})
+       }} else {res.render('index') }})
 app.get('/contact', (req, res) => {
      
     res.render('contact')})
