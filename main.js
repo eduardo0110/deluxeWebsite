@@ -3,8 +3,8 @@
 //ejs = require('ejs'),
 //MONGOOSE SETUP
 function wwwRedirect(req, res, next) {
-    if (req.headers.host.slice(0, 4) === 'www.') {
-        var newHost = req.headers.host.slice(4);
+    if (req.headers.host.slice(0, 4) !== 'www.') {
+      var  newHost =  req.headers.host.slice(0,4) ==='www.';
         return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
     }
     next();
