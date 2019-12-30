@@ -45,8 +45,7 @@ app.use(
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
 app.set('trust proxy', true);
-app.use(wwwRedirect);
-app.use(express.json());
+
 
 app.get('/', (req, res) => {
     res.render('index')});
@@ -93,6 +92,8 @@ app.get('*',function(req,res){
     res.redirect(301 ,res.redirect('https://wwww' + req.headers.host + req.url)
 )});
 
+app.use(wwwRedirect);
+app.use(express.json());
 app.listen(app.get("port") , () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);
 });
