@@ -41,7 +41,7 @@ const errorController= require('./controllers/errorController');
 app.use(express.json());
 app.get('/', (req, res) => {
     res.render('index')});
-app.get('https://deluxesiding.com') , (req , res) => {
+app.get(https + '://deluxesiding.com') , (req , res) => {
     res.redirect(301 ,'index' )
 }
 app.get('/contact', (req, res) => {
