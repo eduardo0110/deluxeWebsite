@@ -40,6 +40,15 @@ app.use(
 );
 
 //ROUTES****
+app.get("*" , function (req, res) => {
+    function wwwRedirect(req, res, next) {
+        if (req.headers.host.slice(0, 4) !== 'www.') {
+          var  newHost =  req.headers.host.slice(0,4) ==='www.';
+            return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
+        }
+        next();
+    };
+})
 app.get('*',function(req,res){  
     res.redirect(301 ,res.redirect('https://wwww' + req.headers.host + req.url)
 )});
