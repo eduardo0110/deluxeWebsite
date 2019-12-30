@@ -40,7 +40,7 @@ const errorController= require('./controllers/errorController');
 
 app.use(express.json());
 app.get('*',function(req,res){  
-    res.redirect('https://www.deluxesiding.com'+req.url)
+    res.redirect(301 ,'https://www.deluxesiding.com'+req.url)
 })
 app.get('/', (req, res) => {
     res.render('index')});
