@@ -51,10 +51,10 @@ app.get('/', (req, res,next) => {
           return res.redirect(301, "https://www." + host + req.url);
         } else if (req.headers['x-forwarded-proto'] !== 'https') {{
           return res.redirect('https://' + req.hostname + req.url);
+        }} else {
+            res.render('index')
         }
-        next();
-      } 
-    res.render('index')
+    
      
 });
 app.get('/contact', (req, res) => {
