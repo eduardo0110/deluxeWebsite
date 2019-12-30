@@ -2,6 +2,13 @@
 //statusCode = require('http-status-codes'),
 //ejs = require('ejs'),
 //MONGOOSE SETUP
+function wwwRedirect(req, res, next) {
+    if (req.headers.host.slice(0, 4) === 'www.') {
+        var newHost = req.headers.host.slice(4);
+        return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
+    }
+    next();
+};
 const https = require('https'),
 mongoose = require("mongoose");
 const dotenv = require('dotenv');
@@ -37,7 +44,8 @@ app.use(
 
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
-
+app.set('trust proxy', true);
+app.use(wwwRedirect);
 app.use(express.json());
 
 app.get('/', (req, res) => {
