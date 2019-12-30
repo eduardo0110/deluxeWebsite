@@ -1,0 +1,10 @@
+User-agent:* # match all bots
+
+Disallow:/controllers/
+Disallow:/models/
+Disallow:/views/thanks.ejs
+Disallow:/views/error.ejs
+
+Noindex:/controllers/
+
+Sitemap:https://www.deluxesiding.com/sitemap.xml
