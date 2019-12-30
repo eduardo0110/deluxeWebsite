@@ -2,13 +2,7 @@
 //statusCode = require('http-status-codes'),
 //ejs = require('ejs'),
 //MONGOOSE SETUP
-function wwwRedirect(req, res, next) {
-    if (req.headers.host.slice(0, 4) !== 'www.') {
-      var  newHost =  req.headers.host.slice(0,4) ==='www.';
-        return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
-    }
-    next();
-};
+
 const https = require('https'),
 mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
@@ -88,12 +82,14 @@ app.get('/deluxesiding.com/*' , (req , res) => {
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
+
+
+
+app.use(express.json());
+
 app.get('*',function(req,res){  
     res.redirect(301 ,res.redirect('https://wwww' + req.headers.host + req.url)
 )});
-
-app.use(wwwRedirect);
-app.use(express.json());
 app.listen(app.get("port") , () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);
 });
