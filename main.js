@@ -51,8 +51,20 @@ app.post('/contact-form',quoteController.saveQuote);
 app.get('/thanks' ,(req,res) => {
     res.render('thanks')
 });
+app.get('/roofingblog' , (req , res) => {
+    res.render('roofingBlog')
+});
+app.get('/gutterblog' , (req , res) => {
+    res.render('gutterBlog')
+});
+app.get('/flooringblog' , (req , res) => {
+    res.render('flooringBlog')
+});
 app.get('/blog' , (req , res) => {
     res.render('blog')
+});
+app.get('/carpentryblog' , (req , res) => {
+    res.render('carpentryBlog')
 });
 app.get('/deluxesiding.com/contact/*' , (req , res) => {
     res.render('contact')})
