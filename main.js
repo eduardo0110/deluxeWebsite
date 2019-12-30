@@ -11,7 +11,6 @@ function wwwRedirect(req, res, next) {
 };
 const https = require('https'),
 mongoose = require("mongoose");
-const dotenv = require('dotenv');
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
 {useNewUrlParser : true});
 
@@ -41,10 +40,14 @@ app.use(
 );
 
 //ROUTES****
-
+app.get('*',function(req,res){  
+    res.redirect(301 ,res.redirect('https://wwww' + req.headers.host + req.url)
+)});
+app.set('trust proxy', true);
+app.use(wwwRedirect);
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
-app.set('trust proxy', true);
+
 
 
 app.get('/', (req, res) => {
@@ -88,11 +91,7 @@ app.get('/deluxesiding.com/*' , (req , res) => {
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
-app.get('*',function(req,res){  
-    res.redirect(301 ,res.redirect('https://wwww' + req.headers.host + req.url)
-)});
 
-app.use(wwwRedirect);
 app.use(express.json());
 app.listen(app.get("port") , () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);
