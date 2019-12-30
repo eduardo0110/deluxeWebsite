@@ -41,8 +41,8 @@ const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
 
  
-app.get('/', (req, res) => {
-     function checkUrl(req, res, next) {
+app.get('/', (req, res,next) => {
+     
         let host = req.headers.host;
         if (!host.match(/^www\..*/i)) {
           return res.redirect(301, "https://www." + host + req.url);
@@ -50,10 +50,10 @@ app.get('/', (req, res) => {
           return res.redirect('https://' + req.hostname + req.url);
         }
         next();
-      }}
-    app.use(checkUrl);
-    res.render('index')});
-
+     
+    
+    
+}})
 app.get('/contact', (req, res) => {
      
     res.render('contact')})
