@@ -77,7 +77,7 @@ app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
 app.get("*", function(request, response){
-    response.redirect("https://" + request.headers.host + request.url);
+    response.redirect("https://wwww" + request.headers.host + request.url);
   });
 app.listen(app.get("port") , () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);
