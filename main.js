@@ -40,7 +40,7 @@ app.use(
 );
 
 //ROUTES****
-app.get("*" , function (req, res) => {
+app.get("*" ,  (req, res) => {
     function wwwRedirect(req, res, next) {
         if (req.headers.host.slice(0, 4) !== 'www.') {
           var  newHost =  req.headers.host.slice(0,4) ==='www.';
