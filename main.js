@@ -62,9 +62,9 @@ app.get('/flooringblog' , (req , res) => {
 });
 app.get('/carpinteriablog' ,(req , res ) => {
     res.render('carpinteria')
-})
-
 });
+
+
 app.get('/blog' , (req , res) => {
     res.render('blog')
 });
