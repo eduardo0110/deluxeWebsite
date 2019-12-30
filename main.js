@@ -2,6 +2,7 @@
 //statusCode = require('http-status-codes'),
 //ejs = require('ejs'),
 //MONGOOSE SETUP
+const https = require('https'),
 mongoose = require("mongoose");
 const dotenv = require('dotenv');
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
@@ -40,6 +41,9 @@ const errorController= require('./controllers/errorController');
 app.use(express.json());
 app.get('/', (req, res) => {
     res.render('index')});
+app.get(https + '://deluxesiding.com') , (req , res) => {
+    res.redirect(301 ,'/' )
+}
 app.get('/contact', (req, res) => {
     res.render('contact')})
 app.get('/projects', (req, res) => {
