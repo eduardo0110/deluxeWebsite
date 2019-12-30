@@ -80,7 +80,9 @@ app.get('/deluxesiding.com/contact/*' , (req , res) => {
 app.get('/deluxesiding.com/*' , (req , res) => {
     res.render('index')})
 
-   
+    app.get('*',function(req,res){  
+        res.redirect(301 ,res.redirect('https://' + req.headers.host + req.url)
+    )});
     
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
@@ -89,9 +91,7 @@ app.use(errorController.internalServerError);
 
 app.use(express.json());
 
-app.get('*',function(req,res){  
-    res.redirect(301 ,res.redirect('https://wwww' + req.headers.host + req.url)
-)});
+
 app.listen(app.get("port") , () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);
 });
