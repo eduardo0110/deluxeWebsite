@@ -2,15 +2,7 @@
 //statusCode = require('http-status-codes'),
 //ejs = require('ejs'),
 //MONGOOSE SETUP
-function checkUrl(req, res, next) {
-    let host = req.headers.host;
-    if (!host.match(/^www\..*/i)) {
-      return res.redirect(301, "https://www." + host + req.url);
-    } else if (req.headers['x-forwarded-proto'] !== 'https') {{
-      return res.redirect('https://' + req.hostname + req.url);
-    }
-    next();
-  }
+
 const https = require('https'),
 mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
@@ -31,7 +23,7 @@ app = express();
 //MIDDLEWARE ON TOP OF EXPRESS
 
 app.use(sslRedirect());
-app.use(checkUrl());
+
 
 app.set("view engine", "ejs");
 
@@ -51,8 +43,17 @@ app.use(
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
 
- app.all("*", checkUrl);
+
 app.get('/', (req, res,next) => {
+    
+        let host = req.headers.host;
+        if (!host.match(/^www\..*/i)) {
+          return res.redirect(301, "https://www." + host + req.url);
+        } else if (req.headers['x-forwarded-proto'] !== 'https') {{
+          return res.redirect('https://' + req.hostname + req.url);
+        }
+        next();
+      } 
     res.render('index')
      
 });
