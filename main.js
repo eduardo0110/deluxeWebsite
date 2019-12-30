@@ -39,7 +39,6 @@ app.use(
 
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
-
 function checkUrl(req, res, next) {
     let host = req.headers.host;
     if (!host.match(/^www\..*/i)) {
@@ -56,6 +55,7 @@ app.get(https + '://deluxesiding.com') , (req , res) => {
     res.redirect(301 ,'index' )
 }
 app.get('/contact', (req, res) => {
+     app.use(checkUrl);
     res.render('contact')})
 app.get('/projects', (req, res) => {
     res.render('projects')});
@@ -91,7 +91,7 @@ app.get('/deluxesiding.com/*' , (req , res) => {
     app.get('*',function(req,res){  
         res.redirect(301 ,res.redirect('https://www.' + req.headers.host + req.url)
     )});
-    app.use(checkUrl);
+    
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
