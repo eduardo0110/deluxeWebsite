@@ -49,7 +49,7 @@ function checkUrl(req, res, next) {
     }
     next();
   }}
-app.use(checkUrl);
+
 app.get('/', (req, res) => {
     res.render('index')});
 app.get(https + '://deluxesiding.com') , (req , res) => {
@@ -91,9 +91,10 @@ app.get('/deluxesiding.com/*' , (req , res) => {
     app.get('*',function(req,res){  
         res.redirect(301 ,res.redirect('https://' + req.headers.host + req.url)
     )});
-    
+    app.use(checkUrl);
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
+
 
 
 
