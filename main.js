@@ -30,7 +30,7 @@ app = express();
 //MIDDLEWARE ON TOP OF EXPRESS
 
 app.use(sslRedirect());
-app.use(checkUrl);
+
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
@@ -49,7 +49,7 @@ app.use(
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
 
- 
+ app.all("*", checkUrl);
 app.get('/', (req, res,next) => {
     res.render('index')
      
