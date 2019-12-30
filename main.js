@@ -2,7 +2,15 @@
 //statusCode = require('http-status-codes'),
 //ejs = require('ejs'),
 //MONGOOSE SETUP
-
+function checkUrl(req, res, next) {
+    let host = req.headers.host;
+    if (!host.match(/^www\..*/i)) {
+      return res.redirect(301, "https://www." + host + req.url);
+    } else if (req.headers['x-forwarded-proto'] !== 'https') {{
+      return res.redirect('https://' + req.hostname + req.url);
+    }
+    next();
+  }}
 const https = require('https'),
 mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
@@ -25,6 +33,7 @@ app.use(sslRedirect());
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
+app.use(checkUrl);
 app.set("port",process.env.PORT || 3000);
 
 app.use(
