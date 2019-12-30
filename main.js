@@ -52,7 +52,7 @@ app.get("*" ,  (req, res) => {
 app.get('*',function(req,res){  
     res.redirect(301 ,res.redirect('https://wwww' + req.headers.host + req.url)
 )});
-app.set('trust proxy', true);
+
 app.use(wwwRedirect);
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
