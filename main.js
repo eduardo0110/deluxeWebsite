@@ -37,6 +37,7 @@ app.use(
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
 
+
 app.use(express.json());
 app.get('/', (req, res) => {
     res.render('index')});
