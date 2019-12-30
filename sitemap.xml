@@ -1,37 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://www.deluxesiding.com/</loc>
-  <lastmod>2019-12-21T18:13:54+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.deluxesiding.com/contact</loc>
-  <lastmod>2019-12-21T18:13:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.deluxesiding.com/services</loc>
-  <lastmod>2019-12-21T18:13:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.deluxesiding.com/projects</loc>
-  <lastmod>2019-12-21T18:13:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.deluxesiding.com/blog</loc>
-  <lastmod>2019-12-21T18:13:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-
-
+<?xml-stylesheet type='text/xsl' href='sitemap.xsl'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://www.deluxesiding.com/</loc>
+    <changefreq>Monthly</changefreq>
+    <priority>1</priority>
+    <lastmod>2019-12-30T15:29:20Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.deluxesiding.com/contact</loc>
+    <changefreq>Monthly</changefreq>
+    <priority>1</priority>
+    <lastmod>2019-12-30T15:29:20Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.deluxesiding.com/services</loc>
+    <changefreq>Monthly</changefreq>
+    <priority>1</priority>
+    <lastmod>2019-12-30T15:29:20Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.deluxesiding.com/projects</loc>
+    <changefreq>Monthly</changefreq>
+    <priority>1</priority>
+    <lastmod>2019-12-30T15:29:20Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.deluxesiding.com/gutterblog</loc>
+    <changefreq>Monthly</changefreq>
+    <priority>1</priority>
+    <lastmod>2019-12-30T15:29:20Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.deluxesiding.com/blog</loc>
+    <changefreq>Monthly</changefreq>
+    <priority>1</priority>
+    <lastmod>2019-12-30T15:29:20Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.deluxesiding.com/roofingblog</loc>
+    <changefreq>Monthly</changefreq>
+    <priority>1</priority>
+    <lastmod>2019-12-30T15:29:20Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.deluxesiding.com/carpentryblog</loc>
+    <changefreq>Monthly</changefreq>
+    <priority>1</priority>
+    <lastmod>2019-12-30T15:29:20Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.deluxesiding.com/flooringblog</loc>
+    <changefreq>Monthly</changefreq>
+    <priority>1</priority>
+    <lastmod>2019-12-30T15:29:20Z</lastmod>
+  </url>
 </urlset>
