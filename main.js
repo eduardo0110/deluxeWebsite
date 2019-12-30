@@ -2,7 +2,14 @@
 //statusCode = require('http-status-codes'),
 //ejs = require('ejs'),
 //MONGOOSE SETUP
-
+function checkUrl(req, res, next) {
+    let host = req.headers.host;
+    if (host.match(/^www\..*/i)) {
+      next();
+    } else {
+      res.redirect(301, "https://www." + host + req.url);
+    }
+  }
 const https = require('https'),
 mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
@@ -21,7 +28,9 @@ var sslRedirect = require('heroku-ssl-redirect');
 const express = require('express'),
 app = express();
 //MIDDLEWARE ON TOP OF EXPRESS
+
 app.use(sslRedirect());
+app.use(checkUrl);
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
@@ -42,14 +51,9 @@ const errorController= require('./controllers/errorController');
 
  
 app.get('/', (req, res,next) => {
+    res.render('index')
      
-        let host = req.headers.host;
-        if (!host.match(/^www\..*/i)) {
-          return res.redirect(301, "https://www." + host + req.url);
-        } else if (req.headers['x-forwarded-proto'] !== 'https') {{
-          return res.redirect('https://' + req.hostname + req.url);
-       }} else {res.render('index') }
-        next();})
+});
 app.get('/contact', (req, res) => {
      
     res.render('contact')})
