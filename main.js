@@ -48,9 +48,9 @@ function checkUrl(req, res, next) {
     }
     next();
   }}
-
+  app.use(checkUrl);
 app.get('/', (req, res) => {
-    app.use(checkUrl);
+    
     res.render('index')});
 
 app.get('/contact', (req, res) => {
