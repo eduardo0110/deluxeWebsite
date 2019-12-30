@@ -37,7 +37,6 @@ app.use(
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
 
-
 app.use(express.json());
 app.get('/', (req, res) => {
     res.render('index')});
@@ -59,13 +58,15 @@ app.get('/gutterblog' , (req , res) => {
     res.render('gutterBlog')
 });
 app.get('/flooringblog' , (req , res) => {
-    res.render('flooringBlog')
+    res.render('flooringblog')
+});
+app.get('/carpinteriablog' ,(req , res ) => {
+    res.render('carpinteria')
+})
+
 });
 app.get('/blog' , (req , res) => {
     res.render('blog')
-});
-app.get('/carpentryblog' , (req , res) => {
-    res.render('carpentryBlog')
 });
 app.get('/deluxesiding.com/contact/*' , (req , res) => {
     res.render('contact')})
