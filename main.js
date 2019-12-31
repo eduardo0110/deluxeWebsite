@@ -17,6 +17,7 @@ mongoose.Promise = global.Promise
 mongoose.set('useCreateIndex', true);
 
 //EXPRESSS
+const middleware = require('./controllers/middleware');
 var sslRedirect = require('heroku-ssl-redirect');
 const express = require('express'),
 app = express();
@@ -24,22 +25,15 @@ var server
 //MIDDLEWARE ON TOP OF EXPRESS
 
 app.use(sslRedirect());
-
-
-
-
 app.set("view engine", "ejs");
-
 app.use(express.static("public"));
-
 app.set("port",process.env.PORT || 3000);
-
 app.use(
     express.urlencoded({
         extended:false
     })
 );
-
+app.use(middleware.checkUrl);
 //ROUTES****
 
 
@@ -104,6 +98,7 @@ app.get('/deluxesiding.com/*' , (req , res) => {
     
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
+
 
 
 
