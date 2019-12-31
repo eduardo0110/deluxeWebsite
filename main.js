@@ -3,8 +3,8 @@
 //ejs = require('ejs'),
 //MONGOOSE SETUP
 
-
-const mongoose = require("mongoose");
+const https = require('https'),
+mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
 {useNewUrlParser : true, useUnifiedTopology :true});
 
@@ -17,17 +17,23 @@ mongoose.Promise = global.Promise
 mongoose.set('useCreateIndex', true);
 
 //EXPRESSS
-const middleware = require('./controllers/middleware');
 var sslRedirect = require('heroku-ssl-redirect');
 const express = require('express'),
 app = express();
-
+var server
 //MIDDLEWARE ON TOP OF EXPRESS
 
 app.use(sslRedirect());
+
+
+
+
 app.set("view engine", "ejs");
+
 app.use(express.static("public"));
+
 app.set("port",process.env.PORT || 3000);
+
 app.use(
     express.urlencoded({
         extended:false
@@ -96,7 +102,6 @@ app.get('/deluxesiding.com/*' , (req , res) => {
         res.redirect(301 ,res.redirect('https://www.' + req.headers.host + req.url)
     )});
     
-//app.use(middleware.checkUrl);
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
