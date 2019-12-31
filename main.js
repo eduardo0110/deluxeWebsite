@@ -3,13 +3,11 @@
 //ejs = require('ejs'),
 //MONGOOSE SETUP
 
-const https = require('https'),
-mongoose = require("mongoose");
+
+const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
 {useNewUrlParser : true, useUnifiedTopology :true});
-
 const db = mongoose.connection;
-
 db.once("open",() => {
     console.log("successfully connected to mongodb using moongose!!");
 });
@@ -20,42 +18,25 @@ mongoose.set('useCreateIndex', true);
 var sslRedirect = require('heroku-ssl-redirect');
 const express = require('express'),
 app = express();
-var server
 //MIDDLEWARE ON TOP OF EXPRESS
-
 app.use(sslRedirect());
-
-
-
-
 app.set("view engine", "ejs");
-
 app.use(express.static("public"));
-
 app.set("port",process.env.PORT || 3000);
-
 app.use(
     express.urlencoded({
         extended:false
     })
 );
-
 //ROUTES****
-
-
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
 
-
 app.get('/', (req, res,next) => {
-    
-  res.render('index')
-    
-     
-});
+   res.render('index')
+    });
 app.get('/contact', (req, res) => {
-     
-    res.render('contact')})
+     res.render('contact')})
 app.get('/projects', (req, res) => {
   
     res.render('projects')});
