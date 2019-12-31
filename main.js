@@ -31,9 +31,7 @@ app.use(
 //ROUTES****
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
-app.get('/*',function(req,res){  
-    res.redirect(301 ,res.redirect('https://www.' + req.headers.host + req.url)
-)});
+
 app.get('/', (req, res,next) => {
    res.render('index')
     });
@@ -81,7 +79,9 @@ app.get('/deluxesiding.com/*' , (req , res) => {
     
     res.render('index')})
 
-   
+    app.get('/*',function(req,res){  
+        res.redirect(301 ,res.redirect('https://www.' + req.headers.host + req.url)
+    )});
      
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
