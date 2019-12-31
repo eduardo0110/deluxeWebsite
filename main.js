@@ -3,8 +3,8 @@
 //ejs = require('ejs'),
 //MONGOOSE SETUP
 
-const https = require('https'),
-mongoose = require("mongoose");
+
+const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
 {useNewUrlParser : true, useUnifiedTopology :true});
 
@@ -21,7 +21,7 @@ const middleware = require('./controllers/middleware');
 var sslRedirect = require('heroku-ssl-redirect');
 const express = require('express'),
 app = express();
-var server
+
 //MIDDLEWARE ON TOP OF EXPRESS
 
 app.use(sslRedirect());
