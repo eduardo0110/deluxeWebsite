@@ -1,5 +1,5 @@
 
-exports.checkUrl = (req, res, next) => {
+checkUrl = (req, res, next) => {
   let host = req.headers.host;
   if (host.match(/^www\..*/i)) {
     next();

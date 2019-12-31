@@ -1,12 +1,13 @@
 
-//statusCode = require('http-status-codes'),
-//ejs = require('ejs'),
-//MONGOOSE SETUP
 
-
+const express = require('express'),
+app = express();
+var sslRedirect = require('heroku-ssl-redirect');
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
-{useNewUrlParser : true, useUnifiedTopology :true});
+{useNewUrlParser : true,
+ useUnifiedTopology :true,
+ retryWrites:false});
 const db = mongoose.connection;
 db.once("open",() => {
     console.log("successfully connected to mongodb using moongose!!");
@@ -14,11 +15,9 @@ db.once("open",() => {
 mongoose.Promise = global.Promise
 mongoose.set('useCreateIndex', true);
 
-//EXPRESSS
-var sslRedirect = require('heroku-ssl-redirect');
-const express = require('express'),
-app = express();
+
 //MIDDLEWARE ON TOP OF EXPRESS
+app.use(express.json());
 app.use(sslRedirect());
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -79,14 +78,17 @@ app.get('/deluxesiding.com/*' , (req , res) => {
     
     res.render('index')})
 
-   
+    app.get('*',function(req,res){  
+        res.redirect(301 ,res.redirect('https://www.' + req.headers.host + req.url)
+    )});
+     
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
 
 
 
 
-app.use(express.json());
+
 
 
 app.listen(app.get("port") , () => {
