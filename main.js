@@ -28,7 +28,7 @@ app.use(
         extended:false
     })
 );
-app.use(middleware.checkUrl);
+
 //ROUTES****
 const quoteController = require('./controllers/quote-controller');
 const errorController= require('./controllers/errorController');
@@ -75,12 +75,11 @@ app.get('/blog' , (req , res) => {
     res.render('blog')
 });
 app.get('/deluxesiding.com/contact/*' , (req , res) => {
-    
-    res.render('contact')})
-app.get('/deluxesiding.com/*' , (req , res) => {
-    
-    res.render('index')})
+     res.render('contact')});
 
+    app.use(middleware.checkUrl);
+   
+   
     app.get('/*',function(req,res){  
         res.redirect(301 ,res.redirect('https://www.' + req.headers.host + req.url)
     )});
