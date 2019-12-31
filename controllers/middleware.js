@@ -6,7 +6,8 @@ exports.checkUrl = function(req, res, next) {
     } else if (req.headers['x-forwarded-proto'] !== 'https') {{
       return res.redirect('https://' + req.hostname + req.url)
     }
-    next()
-  }}
+    
+  }
+  next()}
 
 
