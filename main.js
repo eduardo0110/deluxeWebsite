@@ -39,13 +39,7 @@ app.use(
         extended:false
     })
 );
-app.use((req , res , next) => {
-    var host = req.get('Host');
-    if (host === 'https://deluxesiding.com' + req.originalUrl) {
-        return res.redirect(301,'https://www.deluxesiding.com/' + req.originalUrl);
-    }
-    return next();
-})
+
 //ROUTES****
 
 
