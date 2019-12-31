@@ -108,7 +108,6 @@ app.use(errorController.internalServerError);
 
 
 
-
 app.use(express.json());
 
 
