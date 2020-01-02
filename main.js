@@ -4,6 +4,7 @@ const express = require('express'),
 app = express();
 require('dotenv').config()
 var sslRedirect = require('heroku-ssl-redirect');
+var compression = require('compression');
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || " mongodb://localhost:27017/messages",
 {useNewUrlParser : true,
@@ -21,6 +22,7 @@ mongoose.set('useCreateIndex', true);
 app.use(express.json());
 app.use(sslRedirect());
 app.set("view engine", "ejs");
+app.use(compression());
 app.use(express.static("public"));
 app.set("port",process.env.PORT || 3000);
 app.use(
