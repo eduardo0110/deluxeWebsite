@@ -21,6 +21,7 @@ mongoose.set('useCreateIndex', true);
 //MIDDLEWARE ON TOP OF EXPRESS
 app.use(express.json());
 app.use(sslRedirect());
+app.disable('x-powered-by');
 app.set("view engine", "ejs");
 app.use(compression());
 app.use(express.static("public"));
