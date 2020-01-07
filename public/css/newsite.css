@@ -601,6 +601,7 @@ display:inline-block;
     margin-bottom:-1.5em;
     text-align:center;
     color:#9CA9A9;
+    margin-bottom: 1em;
     
   }
 
@@ -919,4 +920,8 @@ z-index:100;
 
 #icon1 {
   margin-top:.3em;
+}
+
+.about{
+  padding-top:1em;
 }
