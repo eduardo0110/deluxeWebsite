@@ -65,9 +65,9 @@ app.get('/gutterblog' , (req , res) => {
 });
 app.get('/flooringblog' , (req , res) => {
    
-    res.render('flooringblog')
+    res.render('flooringBlog')
 });
-app.get('/carpinteriablog' ,(req , res ) => {
+app.get('/carpentryblog' ,(req , res ) => {
    
     res.render('carpinteria')
 });
