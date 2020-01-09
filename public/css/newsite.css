@@ -606,6 +606,7 @@ display:inline-block;
     margin-bottom:.1em;
     
   }
+ 
   .footer-navigation > a {
     color:#fff;
   }
@@ -638,6 +639,11 @@ display:inline-block;
   flex-direction:row;
   flex-wrap: nowrap;
   justify-content:space-between;
+}
+@media (max-width:500px){
+    .footer-info {
+      flex-direction:column;
+    }
 }
 .footer-buttons{
   border-radius:100px;
