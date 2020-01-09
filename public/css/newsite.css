@@ -841,6 +841,9 @@ margin: .5%;
   left:.8em;
   color:blue !important;
 }
+.footer-titles{
+ border-bottom:white dashed  5px;
+}
 
 @media (min-width:896px) {
 
