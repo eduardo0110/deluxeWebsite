@@ -606,6 +606,19 @@ display:inline-block;
     margin-bottom:.1em;
     
   }
+  .footer-navigation > a {
+    color:#fff;
+  }
+  .footer-navigation{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+  }
+  .deluxe-siding{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+  }
   .buttons-footer{
     display:flex;
     flex-direction:column;
