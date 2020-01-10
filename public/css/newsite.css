@@ -841,6 +841,10 @@ margin: .5%;
   left:.8em;
   color:blue !important;
 }
+.contact-content{
+  color:#Fff;
+  text-align:center;
+}
 .footer-titles{
  border-bottom:white dashed  5px;
 }
