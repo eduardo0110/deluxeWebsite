@@ -1078,3 +1078,15 @@ z-index:100;
 .demo:hover {
   opacity: 1;
 }
+.siding-repair{
+  background-color:#fff;
+}
+
+.ul-duration > li > a {
+  display:block;
+}
+
+.ul-duration > li {
+  display: block;
+  padding:0;
+}
