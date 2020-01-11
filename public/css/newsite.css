@@ -1079,14 +1079,28 @@ z-index:100;
   opacity: 1;
 }
 .siding-repair{
-  background-color:#fff;
+  background-image:url('/images/background-duration1.png');
+  color:#fff;
+  margin-top:-1.1em;
+  margin-bottom:-1.1em;
+  text-align:center;
+  color:black;
+  font-weight:bold;
 }
 
 .ul-duration > li > a {
   display:block;
+  color:#fff;
+ 
 }
 
 .ul-duration > li {
   display: block;
   padding:0;
+  background:none;
+ 
+}
+
+.siding-repair-title{
+  padding-top:1em;
 }
