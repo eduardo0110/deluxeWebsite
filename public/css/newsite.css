@@ -999,12 +999,12 @@ z-index:100;
 .next {
   cursor: pointer;
   position: absolute;
-  top: 30%;
+  top: 510%;
   
   width: auto;
   padding: 16px;
   margin-top: -50px;
-  color: white;
+  color: blue;
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
@@ -1016,13 +1016,15 @@ z-index:100;
 /* Position the "next button" to the right */
 
 .next {
-  right: 40%;
+  right: 35%;
   border-radius: 3px 0 0 3px;
+  
 }
 
 @media (max-width:490px) {
   .next {
-    right:28%;
+    right:20%;
+    top:2095%
   }
 }
 
@@ -1032,11 +1034,13 @@ z-index:100;
   background-color: rgba(0, 0, 0, 0.8);
 }
 .prev{
-    left:40%;
+    left:35%;
+    
 }
 @media (max-width:480px){
   .prev{
-    left:30%;
+    left:20%;
+    top:2095%
   }
 }
 
