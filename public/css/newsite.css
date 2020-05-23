@@ -1122,10 +1122,20 @@ z-index:100;
   padding:1em 20em;
   margin: 0 auto;
 }
+@media(max-width:500px){
+  #form-container{
+    padding: 1em 2em;
+  }
+}
 
 #first-name{
   margin-left: 6.5em;
   border-radius:50em;
+}
+@media(max-width:500px){
+  #first-name{
+    margin-left:4em;
+  }
 }
 #cellphone-number{
   border-radius: 50em;
