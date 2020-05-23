@@ -46,9 +46,16 @@ app.get('/projects', (req, res) => {
   
     res.render('projects')});
 app.get('/services', (req, res) => {
-    
     res.render('services')});
+
 app.post('/contact-form',quoteController.saveQuote);
+
+app.get('/call',(req , res) => {
+    res.render('callpage')
+});
+
+app.post('/call-form',quoteController.SaveCallBack);
+
 
 app.get('/thanks' ,(req,res) => {
 

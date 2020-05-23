@@ -1,5 +1,6 @@
-const mongoose = require("mongoose")
-const Quote = require("../models/quote")
+const mongoose = require("mongoose");
+const Quote = require("../models/quote");
+const CallBack = require("../models/callback");
 
 
 exports.saveQuote = (req , res) => {
@@ -24,3 +25,17 @@ exports.saveQuote = (req , res) => {
 
 }
 
+exports.SaveCallBack = (req , res) => {
+ let newCallBack = new CallBack({
+   name:req.body.name,
+   number:req.body.number
+ });
+
+ newCallBack.save()
+ .then( ()=> {
+   res.render("thanks")
+ })
+ .catch((error) => {
+   res.send(error);
+ })
+}

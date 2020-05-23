@@ -1109,3 +1109,34 @@ z-index:100;
 .siding-repair-title{
   padding-top:1em;
 }
+
+.little-form {
+   margin: 0 auto;
+  
+  color:#fff;
+  background-color:#70706F;
+ text-align: center;
+}
+
+#form-container{
+  padding:1em 20em;
+  margin: 0 auto;
+}
+
+#first-name{
+  margin-left: 6.5em;
+  border-radius:50em;
+}
+#cellphone-number{
+  border-radius: 50em;
+}
+.no-border {
+  border-radius: 100em;
+}
+.callback-button{
+  border-radius:50em;
+}
+
+.enunciado{
+  background-color:#fff;
+}
